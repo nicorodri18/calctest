@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; // Importa el módulo CommonModule
 
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
@@ -15,7 +14,7 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
   ],
   imports: [
     BrowserModule,
-    CommonModule, // Agrega esta línea
+    CommonModule, // Importa el módulo CommonModule
     FormsModule,
     AppRoutingModule
   ],

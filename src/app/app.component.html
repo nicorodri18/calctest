@@ -1,17 +1,26 @@
 <div class="calculator">
-  <div class="screen">
-    <input type="text" [(ngModel)]="displayValue">
+  <div class="display">
+    <!-- Campo de entrada de texto que muestra el operando actual -->
+    <input type="text" [(ngModel)]="currentOperand">
   </div>
-  <div class="row" *ngFor="let row of matrix">
-    <button class="button" *ngFor="let button of row" (click)="handleButtonClick(button)">{{ button }}</button>
+  <div class="buttons">
+    <!-- Bucle que itera sobre cada fila de botones en la calculadora -->
+    <div class="row" *ngFor="let row of calculator">
+      <!-- Bucle que itera sobre cada botón en la fila actual -->
+      <button class="button" *ngFor="let button of row" [ngClass]="getButtonClass(button)"
+        (click)="handleButtonClick(button)">
+        <!-- Muestra el contenido del botón actual -->
+        {{ button }}
+      </button>
+    </div>
   </div>
   <div class="history">
-    <h3>Historial de entradas:</h3>
+    <h3>Historial de versiones:</h3>
     <ul>
+      <!-- Bucle que muestra cada entrada en el historial -->
       <li *ngFor="let entry of history">{{ entry }}</li>
     </ul>
-  </div>
-  <div class="clear-button">
+    <!-- Botón para limpiar el campo de visualización -->
     <button (click)="clearDisplay()">A/C</button>
   </div>
 </div>
